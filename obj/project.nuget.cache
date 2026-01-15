@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "4VKLJUXDTws=",
+  "success": true,
+  "projectFilePath": "/Users/j_lindsey/Desktop/2026projects/ArtArchive.Api/ArtArchive.Api.csproj",
+  "expectedPackageFiles": [
+    "/Users/j_lindsey/.nuget/packages/microsoft.aspnetcore.openapi/9.0.12/microsoft.aspnetcore.openapi.9.0.12.nupkg.sha512",
+    "/Users/j_lindsey/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512",
+    "/Users/j_lindsey/.nuget/packages/questpdf/2025.12.2/questpdf.2025.12.2.nupkg.sha512"
+  ],
+  "logs": []
+}
