@@ -13,6 +13,7 @@ public class ArtworksController : ControllerBase
   [HttpGet]
   public async Task<IEnumerable<Artwork>> GetArtworks()
     => await _context.Artworks.ToListAsync();
+  
   [HttpPost]
   public async Task<IActionResult> CreateArtwork(Artwork artwork)
   {
