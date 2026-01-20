@@ -21,4 +21,16 @@ public class ArtworksController : ControllerBase
     await _context.SaveChangesAsync();
     return CreatedAtAction(nameof(GetArtworks), new { id = artwork.Id }, artwork);
   }
+
+  [HttpGet("{id}/certificate")]
+  public async Task<IActionResult> GetCertificate(int id)
+  {
+    var artwork = await _context.Artworks.FindAsync(id);
+    if (artwork == null) return NotFound();
+    
+    var generator = new CertificateGenerator();
+    var pdf = generator.GenerateCertificate(artwork);
+
+    return File(pdf, "application/pdf", $"Certificate_Artwork_{id}.pdf");
+    }
 }
