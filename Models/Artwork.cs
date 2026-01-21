@@ -6,4 +6,5 @@ public class Artwork
     public int Year { get; set; }
     public string Medium { get; set; } = string.Empty;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public string IssuingAuthority { get; set; } = "null";
 }
