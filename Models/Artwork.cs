@@ -5,6 +5,6 @@ public class Artwork
     public string Artist { get; set; } = string.Empty;
     public int Year { get; set; }
     public string Medium { get; set; } = string.Empty;
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-    public string IssuingAuthority { get; set; } = "null";
+    public DateTime CreatedAt { get; set; }
+    public string IssuingAuthority { get; set; } = string.Empty;
 }

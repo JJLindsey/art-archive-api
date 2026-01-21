@@ -1,0 +1,24 @@
+# Build output
+bin/
+obj/
+
+# User files
+*.user
+*.log
+
+# SQLite DB
+artarchive.db
+# NuGet and .NET cache
+project.nuget.cache
+
+# Assembly info cache
+*.AssemblyInfoInputs.cache
+# MSBuild/IDE caches
+*.AssemblyInfoInputs.cache
+*.AssemblyReference.cache
+*.FileAbsolute.txt
+*.assets.cache
+*.assets.cacher
+
+# VS/IDE files
+.vs/
