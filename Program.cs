@@ -1,10 +1,15 @@
 using Microsoft.EntityFrameworkCore;
+using QuestPDF.Infrastructure;
+
+QuestPDF.Settings.License = LicenseType.Community;
 
 var builder = WebApplication.CreateBuilder(args);
 //Add services
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ArtArchiveDbContext>(options =>
     options.UseSqlite("Data Source=artarchive.db"));
+builder.Services.AddScoped<ICertificateTemplate, ArtArchiveCertificateTemplate>();
+builder.Services.AddScoped<ICertificateGenerator, CertificateGenerator>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
