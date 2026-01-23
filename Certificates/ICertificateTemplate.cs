@@ -1,6 +1,6 @@
 public interface ICertificateTemplate
 {
-    static string Header { get; } = "";
-    static string Body { get; } = "";
-    static string Footer { get; } = "";
+    string Header { get; }
+    string Body { get; }
+    string Footer { get; }
 }

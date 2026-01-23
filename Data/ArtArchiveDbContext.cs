@@ -15,7 +15,7 @@ public class ArtArchiveDbContext : DbContext
                 Title = "Starry Night",
                 Artist = "Vincent van Gogh",
                 Year = 1889,
-                Medium = "Oil on canvas",
+                Medium = "oil on canvas",
                 CreatedAt = new DateTime(2026, 1, 20),
                 IssuingAuthority = "Art Archive & Provenance Ltd."
             },
@@ -25,7 +25,7 @@ public class ArtArchiveDbContext : DbContext
                 Title = "This Kiss",
                 Artist = "Gustav Klimt",
                 Year = 1908,
-                Medium = "Oil and gold leaf on canvas",
+                Medium = "oil and gold leaf on canvas",
                 CreatedAt = new DateTime(2026, 1, 20),
                 IssuingAuthority = "Art Archive & Provenance Ltd."
             }

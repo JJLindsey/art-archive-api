@@ -18,25 +18,36 @@ public byte[] GenerateCertificate(Artwork artwork)
       //QuestPdf doc definition
       container.Page(page =>
       {
-        page.Size(PageSizes.A4);
-        page.Margin(50);
+        page.Size(400, 600);
+        page.Margin(20);
         page.DefaultTextStyle(x => x.FontSize(18));
-
-        page.Content().Column(col =>
+        page.Content()
+          .PaddingBottom(2)
+          .Column(col =>
         {
           col.Item().Text("Certificate of Authenticity")
             .FontSize(18).Bold().AlignCenter();
 
-          col.Item().PaddingVertical(20);
-          col.Item().Text($"Title; {artwork.Title}");
+          col.Item().PaddingVertical(5);
+          col.Item().Text($"Title: {artwork.Title}");
           col.Item().Text($"Artist: {artwork.Artist}");
           col.Item().Text($"Year: {artwork.Year}");
           col.Item().Text($"Medium: {artwork.Medium}");
-          col.Item().PaddingVertical(20);
+          col.Item().PaddingVertical(5);
           
-          col.Item().Text($"Issued: {DateTime.UtcNow:d}");
+          col.Item().Text($"Issued: {DateTime.UtcNow:d}")
+            .FontSize(14);
+          col.Item().PaddingVertical(5);
           col.Item().Text("Verified by Art Archive System")
+            .FontSize(12)
             .Italic();
+        });
+        page.Footer()
+          .AlignLeft()
+          .Text(text =>
+        {
+          text.Span(_template.Footer)
+            .FontSize(10);
         });
       });
     }).GeneratePdf();
