@@ -30,6 +30,6 @@ public class ArtworksController : ControllerBase
     
     var pdf = certificateGenerator.GenerateCertificate(artwork);
 
-    return File(pdf, "application/pdf", $"Certificate_Artwork_{id}.pdf");
+    return File(pdf, "application/pdf");
     }
 }
