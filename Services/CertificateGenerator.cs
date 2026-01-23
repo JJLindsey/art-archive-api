@@ -5,6 +5,12 @@ using QuestPDF.Infrastructure;
 
 public class CertificateGenerator
 {
+  private readonly ICertificateTemplate _template;
+
+  public CertificateGenerator(ICertificateTemplate template)
+  {
+    _template = template;
+  }
 public byte[] GenerateCertificate(Artwork artwork)
   {
     return Document.Create(container =>
