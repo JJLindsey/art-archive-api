@@ -23,12 +23,12 @@ public class ArtworksController : ControllerBase
   }
 
   [HttpGet("{id}/certificate")]
-  public async Task<IActionResult> GetCertificate(int id, CertificateGenerator generator)
+  public async Task<IActionResult> GetCertificate(int id, ICertificateGenerator certificateGenerator)
   {
     var artwork = await _context.Artworks.FindAsync(id);
     if (artwork == null) return NotFound();
     
-    var pdf = generator.GenerateCertificate(artwork);
+    var pdf = certificateGenerator.GenerateCertificate(artwork);
 
     return File(pdf, "application/pdf", $"Certificate_Artwork_{id}.pdf");
     }

@@ -3,7 +3,7 @@ using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 
-public class CertificateGenerator
+public class CertificateGenerator : ICertificateGenerator
 {
   private readonly ICertificateTemplate _template;
 
