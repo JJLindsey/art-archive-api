@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
+using ArtArchive.Models;
 [ApiController]
 [Route("api/artworks")]
 public class ArtworksController : ControllerBase
@@ -23,9 +23,9 @@ public class ArtworksController : ControllerBase
   }
 
   [HttpGet("{id}/certificate")]
-  public async Task<IActionResult> GetCertificate(int id, ICertificateGenerator certificateGenerator)
+  public async Task<IActionResult> GetCertificate(int id, [FromServices] ICertificateGenerator certificateGenerator)
   {
-    var artwork = await _context.Artworks.FindAsync(id);
+    ArtArchive.Models.Artwork? artwork = await _context.Artworks.FindAsync(id);
     if (artwork == null) return NotFound();
     
     var pdf = certificateGenerator.GenerateCertificate(artwork);

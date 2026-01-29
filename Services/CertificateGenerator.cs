@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
-
+using ArtArchive.Models;
 public class CertificateGenerator : ICertificateGenerator
 {
   private readonly ICertificateTemplate _template;
@@ -33,6 +33,7 @@ public byte[] GenerateCertificate(Artwork artwork)
           col.Item().Text($"Artist: {artwork.Artist}");
           col.Item().Text($"Year: {artwork.Year}");
           col.Item().Text($"Medium: {artwork.Medium}");
+          col.Item().Text($"Dimensions: {artwork.Dimensions}");
           col.Item().PaddingVertical(5);
           
           col.Item().Text($"Issued: {DateTime.UtcNow:d}")
